@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="mkt.token">
+        <url>Marketing auth URL</url>
+        <user-id>Client Id and Secret Id in the password</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="mkt_entry_event">
+        <url>Marketing Rest URL</url>
+        <user-id>The user and password need to bee clear</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-profile service-profile-id="mkt.token">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="mkt_entry_event">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>false</rate-limit-enabled>
+        <rate-limit-calls>0</rate-limit-calls>
+        <rate-limit-millis>0</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>0</cb-calls>
+        <cb-millis>0</cb-millis>
+    </service-profile>
+
+    <service service-id="mkt.entry.event">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>mkt_entry_event_log</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>mkt_entry_event</profile-id>
+        <credential-id>mkt_entry_event</credential-id>
+    </service>
+
+    <service service-id="mkt.token">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>mkt_token_log</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>mkt.token</profile-id>
+        <credential-id>mkt.token</credential-id>
+    </service>
+
+</services>
