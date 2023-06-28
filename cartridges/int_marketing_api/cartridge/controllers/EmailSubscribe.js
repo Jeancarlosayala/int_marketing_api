@@ -36,7 +36,7 @@ server.replace('Subscribe', function (req, res, next) {
     var Resource = require('dw/web/Resource');
     var hooksHelper = require('*/cartridge/scripts/helpers/hooks');
 
-    const { mktNewsletterKey } = Site.getCurrent().getPreferences().custom
+    const { mktNewsletterKey, marketingEmail } = Site.getCurrent().getPreferences().custom
 
     var email = req.form.emailId;
     var isValidEmailid;
@@ -53,7 +53,7 @@ server.replace('Subscribe', function (req, res, next) {
                 entryData.ContactKey = email;
                 entryData.EventDefinitionKey = mktNewsletterKey
                 entryData.Data = {
-                    "Correo": email,
+                    marketingEmail: email,
                     "Nombre": "",
                     "Apellido": ""
                 }
