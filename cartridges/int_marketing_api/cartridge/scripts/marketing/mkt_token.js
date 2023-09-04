@@ -9,16 +9,15 @@ serviceConfig = {
 
   createRequest: function (service) {
     const URL = service.configuration.credential.URL + 'v2/token';
-    const clientId = service.configuration.credential.user;    
-    const clientSecret = service.configuration.credential.password;    
+    const { client_id_mkt, secret_mkt } = Site.getCurrent().getPreferences().custom
 
     service.URL = URL;
     service.addHeader("Content-Type", "application/json");
     service.setRequestMethod("POST");
     var requestData = {
       "grant_type": "client_credentials",
-      "client_id": clientId,
-      "client_secret": clientSecret
+      "client_id": client_id_mkt,
+      "client_secret": secret_mkt
   };
 
     return JSON.stringify(requestData);

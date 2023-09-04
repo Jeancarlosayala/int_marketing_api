@@ -53,5 +53,4 @@
         <profile-id>mkt.token</profile-id>
         <credential-id>mkt.token</credential-id>
     </service>
-
 </services>
