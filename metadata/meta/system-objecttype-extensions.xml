@@ -14,6 +14,8 @@
             <attribute-group group-id="marketingEventKey">
                 <display-name xml:lang="x-default">Marketing Events Keys</display-name>
                 <attribute attribute-id="mktNewsletterKey"/>
+                <attribute attribute-id="secret_mkt"/>
+                <attribute attribute-id="client_id_mkt"/>
             </attribute-group>
         </group-definitions>
     </type-extension>
