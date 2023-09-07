@@ -38,7 +38,7 @@ server.replace('Subscribe', function (req, res, next) {
 
     const { mktNewsletterKey } = Site.getCurrent().getPreferences().custom
 
-    var email = req.form.emailId;
+    var email = req.form.emailId || req.body;
     var isValidEmailid;
 
     if (email) {
@@ -53,9 +53,7 @@ server.replace('Subscribe', function (req, res, next) {
                 entryData.ContactKey = email;
                 entryData.EventDefinitionKey = mktNewsletterKey
                 entryData.Data = {
-                    "Email": email,
-                    "Nombre": "",
-                    "Contact ID": email
+                    "Email": email
                 }
 
                 var response = mkt_entry.call(entryData, token.object.access_token)

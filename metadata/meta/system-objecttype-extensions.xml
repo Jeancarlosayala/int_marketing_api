@@ -2,6 +2,15 @@
 <metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
     <type-extension type-id="SitePreferences">
         <custom-attribute-definitions>
+            <!-- MKT -->
+            <attribute-definition attribute-id="client_id_mkt">
+                <display-name xml:lang="x-default">Client ID Marketing</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <!-- MKT -->
             <attribute-definition attribute-id="mktNewsletterKey">
                 <display-name xml:lang="x-default">Marketing NewsLetter Key</display-name>
                 <type>string</type>
@@ -9,8 +18,17 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <min-length>0</min-length>
             </attribute-definition>
+            <!-- MKT -->
+            <attribute-definition attribute-id="secret_mkt">
+                <display-name xml:lang="x-default">Secret ID Marketing</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
+            <!-- MKT -->
             <attribute-group group-id="marketingEventKey">
                 <display-name xml:lang="x-default">Marketing Events Keys</display-name>
                 <attribute attribute-id="mktNewsletterKey"/>
